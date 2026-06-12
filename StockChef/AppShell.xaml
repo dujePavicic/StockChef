@@ -6,9 +6,6 @@
     xmlns:local="clr-namespace:StockChef"
     Title="StockChef">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+   
 
 </Shell>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StockChef.Views.RegisterPage"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#5F0F12" Offset="0.0"/>
+                <GradientStop Color="#8B1E24" Offset="0.35"/>
+                <GradientStop Color="#B23A48" Offset="0.7"/>
+                <GradientStop Color="#F8EDED" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <ScrollView>
+            <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+                <Label
+                    Text="Napravi račun"
+                    FontSize="36"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    Text="Pridruži se StockChef-u i organiziraj svoju kuhinju"
+                    FontSize="15"
+                    TextColor="#FDECEC"
+                    HorizontalOptions="Center" />
+
+                <Border
+                    BackgroundColor="White"
+                    Padding="25"
+                    Margin="0,20,0,0"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="30"/>
+                    </Border.StrokeShape>
+
+                    <VerticalStackLayout Spacing="18">
+
+                        <Label
+                            Text="Registriraj se"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="#1E293B" />
+
+                        <Entry
+                            Placeholder="Korisničko ime"
+                            Text="{Binding Username}"
+                            BackgroundColor="#FAF5F5"
+                            TextColor="#1E293B" />
+
+                        <Entry
+                            Placeholder="Email"
+                            Text="{Binding Email}"
+                            Keyboard="Email"
+                            BackgroundColor="#FAF5F5"
+                            TextColor="#1E293B" />
+
+                        <Entry
+                            Placeholder="Lozinka"
+                            Text="{Binding Password}"
+                            IsPassword="True"
+                            BackgroundColor="#FAF5F5"
+                            TextColor="#1E293B" />
+
+                        <Entry
+                            Placeholder="Potvrdi lozinku"
+                            Text="{Binding ConfirmPassword}"
+                            IsPassword="True"
+                            BackgroundColor="#FAF5F5"
+                            TextColor="#1E293B" />
+
+                        <Button
+                            Text="NAPRAVI RAČUN"
+                            Command="{Binding RegisterCommand}"
+                            BackgroundColor="#8B1E24"
+                            TextColor="White"
+                            CornerRadius="15"
+                            HeightRequest="55" />
+
+                        <HorizontalStackLayout HorizontalOptions="Center">
+                            <Label
+                                Text="Već imate račun?"
+                                TextColor="#64748B"/>
+
+                            <Label
+                                Text="Prijavi se"
+                                TextColor="#8B1E24"
+                                FontAttributes="Bold">
+
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding GoToLoginCommand}" />
+                                </Label.GestureRecognizers>
+
+                            </Label>
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
