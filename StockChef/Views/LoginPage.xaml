@@ -79,11 +79,11 @@
 
                         <HorizontalStackLayout HorizontalOptions="Center">
                             <Label
-                                Text="Nemate račun?"
+                                Text="Nemate račun? "
                                 TextColor="#64748B"/>
 
                             <Label
-                                Text="Registriraj se"
+                                Text=" Registriraj se"
                                 TextColor="#8B1E24"
                                 FontAttributes="Bold">
 
