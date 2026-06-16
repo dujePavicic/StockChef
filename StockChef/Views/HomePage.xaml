@@ -1,12 +1,114 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StockChef.Views.HomePage"
-             Title="HomePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StockChef.Views.HomePage"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#5F0F12" Offset="0.0"/>
+                <GradientStop Color="#8B1E24" Offset="0.35"/>
+                <GradientStop Color="#B23A48" Offset="0.7"/>
+                <GradientStop Color="#F8EDED" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <ScrollView>
+            <VerticalStackLayout Padding="25" Spacing="22">
+
+                <Label
+                    Text="StockChef"
+                    FontSize="38"
+                    FontAttributes="Bold"
+                    TextColor="White" />
+
+                <Label
+                    Text="Dobrodošli natrag, što Vam je danas na umu?"
+                    FontSize="16"
+                    TextColor="#FDECEC" />
+
+                <Border
+                    BackgroundColor="White"
+                    Padding="22"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="28"/>
+                    </Border.StrokeShape>
+
+                    <VerticalStackLayout Spacing="18">
+
+                        <Label
+                            Text="Dashboard"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="#1E293B" />
+
+                        <Button
+                            Text="Namirnice"
+                            Command="{Binding OpenIngredientsCommand}"
+                            BackgroundColor="#8B1E24"
+                            TextColor="White"
+                            CornerRadius="15"
+                            HeightRequest="55" />
+
+                        <Button
+                            Text="Shopping lista"
+                            Command="{Binding OpenShoppingListCommand}"
+                            BackgroundColor="#B23A48"
+                            TextColor="White"
+                            CornerRadius="15"
+                            HeightRequest="55" />
+
+                        <Button
+                            Text="Recepti"
+                            Command="{Binding OpenRecipesCommand}"
+                            BackgroundColor="#8B1E24"
+                            TextColor="White"
+                            CornerRadius="15"
+                            HeightRequest="55" />
+
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    BackgroundColor="White"
+                    Padding="22"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="28"/>
+                    </Border.StrokeShape>
+
+                    <VerticalStackLayout Spacing="12">
+
+                        <Label
+                            Text="Brzi pregled"
+                            FontSize="22"
+                            FontAttributes="Bold"
+                            TextColor="#1E293B" />
+
+                        <Label
+                            Text="{Binding IngredientsCountText}"
+                            FontSize="16"
+                            TextColor="#475569" />
+
+                        <Label
+                            Text="{Binding ShoppingItemsCountText}"
+                            FontSize="16"
+                            TextColor="#475569" />
+
+                        <Label
+                            Text="{Binding RecipesCountText}"
+                            FontSize="16"
+                            TextColor="#475569" />
+
+                    </VerticalStackLayout>
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

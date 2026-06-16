@@ -19,9 +19,9 @@
             <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
 
                 <Image
-                    Source="dotnet_bot.png"
+                    Source="logo2.png"
                     HeightRequest="110"
-                    WidthRequest="110"
+                    WidthRequest="100"
                     HorizontalOptions="Center" />
 
                 <Label

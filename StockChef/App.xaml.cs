@@ -7,6 +7,7 @@ namespace StockChef
     public partial class App : Application
     {
         public static SQLiteAsyncConnection Database { get; private set; }
+        public static User LoggedUser { get; set; }
         public App()
         {
             InitializeComponent();

@@ -1,14 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using StockChef.Models;
 
 namespace StockChef.ViewModels
 {
-    public class RecipeDetailsViewModel:BaseViewModel
+    public class RecipeDetailsViewModel : BaseViewModel
     {
-        public RecipeDetailsViewModel()
-        {
+        public string Name { get; set; }
 
+        public string Category { get; set; }
+
+        public string Instructions { get; set; }
+
+        public string ImageUrl { get; set; }
+
+        public RecipeDetailsViewModel(Recipe recipe)
+        {
+            Name = recipe.Name;
+            Category = recipe.Category;
+            Instructions = recipe.Instructions;
+            ImageUrl = recipe.ImageUrl;
         }
     }
 }

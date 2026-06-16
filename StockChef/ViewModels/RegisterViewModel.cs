@@ -70,10 +70,7 @@ namespace StockChef.ViewModels
 
         private async Task Register()
         {
-            if (string.IsNullOrWhiteSpace(Username) ||
-                string.IsNullOrWhiteSpace(Email) ||
-                string.IsNullOrWhiteSpace(Password) ||
-                string.IsNullOrWhiteSpace(ConfirmPassword))
+            if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(ConfirmPassword))
             {
                 await Application.Current.MainPage.DisplayAlert("Greška","Popunite sva polja.","OK");
                 return;

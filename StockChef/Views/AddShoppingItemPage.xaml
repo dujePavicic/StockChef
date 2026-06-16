@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StockChef.Views.AddShoppingItemPage"
-             Title="AddShoppingItemPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StockChef.Views.AddShoppingItemPage"
+    Title="Dodaj namirnicu"
+    BackgroundColor="#F8EDED">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <Label
+                Text="Dodaj namirnicu"
+                FontSize="32"
+                FontAttributes="Bold"
+                TextColor="#5F0F12" />
+
+            <Label
+                Text="Unesite namirnicu koju trebate kupiti."
+                FontSize="15"
+                TextColor="#64748B" />
+
+            <Border
+                BackgroundColor="White"
+                Padding="25"
+                StrokeThickness="0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="28"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="18">
+
+                    <Entry
+                        Placeholder="Naziv namirnice"
+                        Text="{Binding Name}"
+                        BackgroundColor="#FAF5F5"
+                        TextColor="#1E293B" />
+
+                    <Button
+                        Text="SPREMI NAMIRNICU"
+                        Command="{Binding SaveShoppingItemCommand}"
+                        BackgroundColor="#8B1E24"
+                        TextColor="White"
+                        CornerRadius="15"
+                        HeightRequest="55" />
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

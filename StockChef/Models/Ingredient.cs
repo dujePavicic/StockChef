@@ -15,5 +15,7 @@ namespace StockChef.Models
         public string Location { get; set; }
         public int Quantity { get; set; }
         public DateTime ExpirationDate { get; set; }
+        
+        
     }
 }

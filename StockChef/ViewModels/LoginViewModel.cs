@@ -78,6 +78,7 @@ namespace StockChef.ViewModels
                 return;
             }
             ClearFields();
+            App.LoggedUser = existingUser;
 
             await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
         }

@@ -1,12 +1,86 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StockChef.Views.AddIngredientPage"
-             Title="AddIngredientPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StockChef.Views.AddIngredientPage"
+    Title="Dodaj namirnicu"
+    BackgroundColor="#F8EDED">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <Label
+                Text="Dodaj namirnicu"
+                FontSize="32"
+                FontAttributes="Bold"
+                TextColor="#5F0F12" />
+
+            <Label
+                Text="Unesite podatke o namirnici koju želite spremiti."
+                FontSize="15"
+                TextColor="#64748B" />
+
+            <Border
+                BackgroundColor="White"
+                Padding="25"
+                StrokeThickness="0">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="28"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="18">
+
+                    <Entry
+                        Placeholder="Naziv namirnice"
+                        Text="{Binding Name}"
+                        BackgroundColor="#FAF5F5"
+                        TextColor="#1E293B" />
+
+                    <Entry
+                        Placeholder="Kategorija"
+                        Text="{Binding Category}"
+                        BackgroundColor="#FAF5F5"
+                        TextColor="#1E293B" />
+
+                    <Picker
+                        Title="Odaberi lokaciju"
+                        SelectedItem="{Binding SelectedLocation}"
+                        BackgroundColor="#FAF5F5"
+                        TextColor="#1E293B">
+
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Frižider</x:String>
+                                <x:String>Ostava</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+
+                    </Picker>
+
+                    <Entry
+                        Placeholder="Količina"
+                        Text="{Binding Quantity}"
+                        Keyboard="Numeric"
+                        BackgroundColor="#FAF5F5"
+                        TextColor="#1E293B" />
+
+                    <DatePicker
+                        Date="{Binding ExpirationDate}"
+                        BackgroundColor="#FAF5F5"
+                        TextColor="#1E293B" />
+
+                    <Button
+                        Text="SPREMI NAMIRNICU"
+                        Command="{Binding SaveIngredientCommand}"
+                        BackgroundColor="#8B1E24"
+                        TextColor="White"
+                        CornerRadius="15"
+                        HeightRequest="55" />
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
